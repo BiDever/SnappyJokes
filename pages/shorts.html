@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/shorts.css">
+    
+    
+    <title>Short Animation Joke Videos | Quick Laughs - Laugh Comedy</title> 
+    
+    <meta name="description" content="Need a quick laugh? Watch hilarious short joke videos from BiniToon Town. Find funny short video jokes."> 
+    <meta name="keywords" content="funny short jokes, short joke videos, funny  videos, quick joke videos, english short jokes, youtube short jokes, short videos"> 
+    <meta name="author" content=" Biniam/BiniToon Town"> 
+    <meta name="robots" content="index,follow"> 
+    <meta name="language" content="en"> 
+    <meta property="og:title" content="Short Joke Videos | Quick Laughs - Laugh Comedy Videos"> 
+    <meta property="og:description" content="Need a quick laugh? Watch hilarious short joke videos from BiniToon Town. Find funny animated short video jokes."> 
+    
+    <meta property="og:image" content="https://Snappy-Jokes.netlify.app/preview.jpg"> 
+    <meta property="og:url" content="https://Snappy-Jokes.netlify.app/shorts.html"> 
+    <meta property="og:type" content="video.other"> 
+    
+    
+    
+    <!--style type="text/css">
+    
+    
+         @media screen and (min-width:700px){
+            
+            .header .menu{
+                font-size: 35px;
+                color: blue;
+            }
+            
+            .container{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            
+            .container div {
+                width: 45%;
+                margin: 5px;
+            }
+        }
+
+    
+        .header {
+            text-align: center;
+            margin-bottom: 0px;
+            color: white;
+        }
+
+        .menu {
+            text-align: center;
+            margin-bottom: 50px;
+            border: 1.5px solid black;
+            padding: 12px;
+            font-size: 20px;
+        }
+
+        .menu a {
+            margin: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: serif;
+            color: black;
+            border: 1px solid;
+            box-sizing: border-box;
+            border-radius: 20px;
+            border: none;
+        }
+
+        .menu a:hover {
+            background: green;
+            color: white;
+            padding: 10px;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        div {
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .container iframe {
+            width: 95%;
+            height: 400px;
+            border-radius: 10%;
+            border-color: lightblue;
+        }
+
+        .container p {
+            width: 95%;
+            font-size: 20px;
+            font-family: serif;
+            font-weight: bold;
+            color: blue;
+        }
+
+        #oif {
+            width: 100%;
+            height: 400px;
+            border-radius: 10%;
+        }
+    </style-->
+    
+</head>
+
+<body>
+    
+    <div class="header">
+        
+        <nav class="menu">
+            <a href="https://Snappy-Jokes/netlify.app/index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="privacy-policy.html">Policy</a>
+        </nav>
+    </div>
+    
+    
+    <img src="img/funnyjokeslogo.jpg" width="100%" height="auto"/>
+    
+
+    <div class="container" id="video_container"></div>
+    
+    <script type="text/JavaScript">
+        const video_Id = [
+            "G_JWjgWSHU4",
+            "xgEtBiI-iF4",
+            "x6nTR7ZyDOA",
+            "69CcmfVQ0sY",
+            "v7TPtwb5Iu8",
+            "owbsZnpBcic",
+            "uIXerA1IUrw",
+            "9hQ5M-Y4U0Q",
+            "jxkub76ZXr0",
+            "0W1XQUvaj34",
+            "_RnLqAmRa8Y",
+            "qrxXlTvpvyw",
+            "qCvmqgSYoyE",
+            "Xbqx8UevDwA",
+            "tzIZ2lLNsbM",
+            "3pKBN-iNt_Q",
+            "x9X6iOBoIcQ",
+            "jvqoBvyu41M",
+            "nangs0R19h4",
+            "4QgcZLHET1s",
+            "kes1ePoSUDI",
+            "ujgLPC2hSzI",
+            "SubMWEMiI7M"
+        ];
+
+        function createVideo() {
+            const container = document.getElementById("video_container");
+            let loadedCount = 0; // Initialize a counter
+
+            function loadNextVideo() {
+                if (loadedCount < video_Id.length) {
+                    const video = document.createElement("div");
+                    const frames = document.createElement("iframe");
+                    frames.src = "https://www.youtube.com/embed/" + video_Id[loadedCount];
+                    frames.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                    frames.referrerpolicy = "strict-origin-when-cross-origin";
+                    frames.allowfullscreen = true;
+
+                    const title = document.createElement("p");
+                    title.textContent = "Short Joke " + (loadedCount + 1);
+
+                    video.appendChild(frames);
+                    video.appendChild(title);
+                    container.appendChild(video);
+
+                    loadedCount++;
+                    // Delay before loading the next video (e.g., 1 second)
+                    setTimeout(loadNextVideo, 1000); // 1000 milliseconds = 1 second
+                }
+            }
+            loadNextVideo(); // Start loading the first video
+        }
+
+        createVideo();
+        
+        
+        function stopOtherVideos(clickedIframe) {
+            const iframes = document.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
+                if (iframe !== clickedIframe) {
+                    iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                }
+            });
+        }
+
+        // Add event listeners to all iframes
+        document.querySelectorAll('iframe').forEach(iframe => {
+            iframe.addEventListener('click', function() {
+                stopOtherVideos(this);
+            });
+        });
+
+        
+        
+        
+        function shorts() {
+            alert("funny Shorts are Coming Soon")
+        }
+
+
+        function story() {
+            alert("funny stories are Coming Soon")
+        }
+
+    </script>
+
+</body>
+
+</html>
