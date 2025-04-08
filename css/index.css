@@ -1,0 +1,116 @@
+        @media screen and (min-width:700px){
+            
+            .header .menu{
+                font-size: 35px;
+            }
+            
+            .container{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            
+            .container a {
+                width: 45%;
+                margin: 5px;
+            }
+        }
+
+
+        .header {
+            text-align: center;
+            margin-bottom: 0px;
+            padding: 5px;
+        }
+        
+       .header #intro_img{
+           border-radius: 10px;
+       } 
+       
+       .header #greeting{
+           border: 2px solid;
+           padding: 5px;
+           background: lightgray;
+       }
+        .menu {
+            text-align: center;
+            margin-bottom: 50px;
+            border: 1.5px solid black;
+            padding: 12px;
+            font-size: 20px;
+        }
+        .menu a {
+            margin: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: serif;
+            color: black;
+            border: 1px solid;
+            box-sizing: border-box;
+            border-radius: 20px;
+            border: none;
+        }
+        .menu a:hover {
+            background: green;
+            color: white;
+            padding: 10px;
+        }
+
+        .container {
+            text-align: center;
+            align-content: center;
+        }
+
+        .container a {
+            text-decoration: none;
+            color: green;
+        }
+        .container .button {
+            width: 100%;
+            height: 200px;
+            border: 2px solid black;
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 30px;;
+            text-align: center;
+            align-content: center;
+            border-radius: 20%;
+            box-shadow: 1px 15px 32px 0px rgba(0,0,0,37);
+        }
+        
+        .container .button_title{
+            
+            font-weight: bold;
+            font-family: serif;
+            color: black;
+           /* background-image: linear-gradient(aqua , blue);*/
+            
+        }
+        
+        .container #short_videos{
+            
+            background-image: url("img/shorts2.jpg");
+            background-repeat: none;
+            background-size: 310px;
+        }
+        
+        .container #story_videos{
+            
+            background-image: url("img/yt.jpg");
+            background-repeat: none;
+            background-size: 350px;
+        }
+        
+        .container #funny_jokes{
+            
+            background-image: url("img/readjokes.jpg");
+            background-repeat: none;
+            background-size: 350px;
+        }
+        
+        .container #funny_stories{
+            
+            background-image: url("img/readjokes.jpg");
+            background-repeat: none;
+            background-size: 350px;
+        }
