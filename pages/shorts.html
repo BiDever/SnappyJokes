@@ -161,31 +161,40 @@
         function createVideo() {
             const container = document.getElementById("video_container");
             let loadedCount = 0; // Initialize a counter
+        
+        for (let i = 0; i < video_Id.length; i++) {
 
-            function loadNextVideo() {
-                if (loadedCount < video_Id.length) {
-                    const video = document.createElement("div");
-                    const frames = document.createElement("iframe");
-                    frames.src = "https://www.youtube.com/embed/" + video_Id[loadedCount];
-                    frames.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-                    frames.referrerpolicy = "strict-origin-when-cross-origin";
-                    frames.allowfullscreen = true;
+                const video = document.createElement("div");
+                const frames = document.createElement("iframe");
+                //video.textContent="hello World";
 
-                    const title = document.createElement("p");
-                    title.textContent = "Short Joke " + (loadedCount + 1);
+                frames.src = "https://www.youtube.com/embed/"+video_Id[i];
 
-                    video.appendChild(frames);
-                    video.appendChild(title);
-                    container.appendChild(video);
+               /* frames.title = "Crazy Driving Rules Makes Me Crazy 😖. #shorts #animation #anime #comedyshorts #jokes" 
 
-                    loadedCount++;
-                    // Delay before loading the next video (e.g., 1 second)
-                    setTimeout(loadNextVideo, 1000); // 1000 milliseconds = 1 second
-                }
+                frames.frameborder = "0" */
+
+                frames.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+
+                frames.referrerpolicy = "strict-origin-when-cross-origin"
+
+                frames.allowfullscreen = true;
+
+
+                const title = document.createElement("p")
+                title.textContent = "Short Joke "+i;
+
+                video.appendChild(frames);
+                video.appendChild(title);
+
+                container.appendChild(video);
             }
-            loadNextVideo(); // Start loading the first video
+
+
         }
 
+        
+        
         createVideo();
         
         
